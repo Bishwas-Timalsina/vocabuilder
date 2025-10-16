@@ -4,6 +4,7 @@ import NavButton from "../UI/Navbutton";
 import { ABOUT, FLASHCARD, HOME, WORD_LIST } from "../../config/path";
 import MobileNavButton from "../UI/MobileNavButton";
 import Logo from "../../assets/Logo-Dark.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,13 +12,16 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-black text-white">
+    <nav className="bg-[black] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2 flex-shrink-0">
+          <Link
+            to={`/${HOME}`}
+            className="flex items-center space-x-2 flex-shrink-0 cursor-pointer"
+          >
             <img src={Logo} alt="Vocabuilder Logo" className="h-16 w-16" />
             <span className="text-xl font-bold">Vocabuilder</span>
-          </div>
+          </Link>
 
           <div className="hidden md:flex space-x-4">
             <NavButton icon={<Home size={20} />} label="Home" route={HOME} />

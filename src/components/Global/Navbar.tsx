@@ -19,8 +19,8 @@ export default function Navbar() {
             to={`/${HOME}`}
             className="flex items-center space-x-2 flex-shrink-0 cursor-pointer"
           >
-            <img src={Logo} alt="Vocabuilder Logo" className="h-16 w-16" />
-            <span className="text-xl font-bold">Vocabuilder</span>
+            <img src={Logo} alt="VocabGuide Logo" className="h-16 w-16" />
+            <span className="text-xl font-bold">VocabGuide</span>
           </Link>
 
           <div className="hidden md:flex space-x-4">

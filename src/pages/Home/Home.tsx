@@ -9,7 +9,7 @@ export default function Home() {
       </div>
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
-          Vocabuilder
+          VocabGuide
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
           Learn over 2000 words for TOEFL, IELTS, PTE, GRE or any other examinations

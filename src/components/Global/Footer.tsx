@@ -13,7 +13,7 @@ const Footer = () => {
             to={`/${HOME}`}
             className="flex items-center space-x-2 flex-shrink-0 cursor-pointer"
           >
-            <img src={Logo} alt="Vocabuilder Logo" className="h-22 w-22" />
+            <img src={Logo} alt="VocabGuide Logo" className="h-22 w-22" />
           </Link>
           <nav className="flex space-x-4 mb-2 sm:mb-0">
             <a

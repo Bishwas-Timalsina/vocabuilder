@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { WORD_LIST, FLASHCARD } from "../../config/path";
+import { FLASHCARD, LIBRARY } from "../../config/path";
 
 export default function Home() {
   return (
@@ -12,11 +12,12 @@ export default function Home() {
           VocabGuide
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Learn over 2000 words for TOEFL, IELTS, PTE, GRE or any other examinations
+          Learn over 2000 words for TOEFL, IELTS, PTE, GRE or any other
+          examinations
         </p>
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
           <Link
-            to={`/${WORD_LIST}`}
+            to={`/${LIBRARY}`}
             className="text-black px-4 py-2 rounded-md border-2 bg-white text-sm sm:text-base md:text-lg font-semibold"
           >
             Library

@@ -1,10 +1,10 @@
 import { Navigate, type RouteObject } from "react-router-dom";
 import AppLayout from "../layout/AppLayout";
-import { ABOUT, FLASHCARD, HOME, WORD_LIST } from "./path";
+import { ABOUT, FLASHCARD, HOME, LIBRARY } from "./path";
 import Home from "../pages/Home/Home";
 import Flashcard from "../pages/Flashcard/Flashcard";
-import WordList from "../pages/Word-List/WordList";
 import About from "../pages/About/About";
+import Library from "../pages/Library/Library";
 
 const AppRoutes: RouteObject = {
   path: "/",
@@ -19,8 +19,8 @@ const AppRoutes: RouteObject = {
       element: <Flashcard />,
     },
     {
-      path: WORD_LIST,
-      element: <WordList />,
+      path: LIBRARY,
+      element: <Library />,
     },
     {
       path: ABOUT,

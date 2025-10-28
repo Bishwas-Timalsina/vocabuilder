@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Home, Menu, X, BookOpen, LayoutDashboard, Info } from "lucide-react";
 import NavButton from "../UI/Navbutton";
-import { ABOUT, FLASHCARD, HOME, WORD_LIST } from "../../config/path";
+import { ABOUT, FLASHCARD, HOME, LIBRARY } from "../../config/path";
 import MobileNavButton from "../UI/MobileNavButton";
 import Logo from "../../assets/Logo-Dark.png";
 import { Link } from "react-router-dom";
@@ -28,7 +28,7 @@ export default function Navbar() {
             <NavButton
               icon={<BookOpen size={20} />}
               label="Library"
-              route={WORD_LIST}
+              route={LIBRARY}
             />
             <NavButton
               icon={<LayoutDashboard size={20} />}
@@ -67,7 +67,7 @@ export default function Navbar() {
             label="Home"
           />
           <MobileNavButton
-            route={WORD_LIST}
+            route={LIBRARY}
             icon={<BookOpen size={20} />}
             label="Library"
           />

@@ -41,7 +41,6 @@ const Flashcard = () => {
         ref={mainContentRef}
         className="flex-1 overflow-y-auto w-full h-screen lg:h-auto"
       >
-        {/* <WordList activeGroup={activeGroup} /> */}
         <WordCard activeGroup={activeGroup} />
       </div>
     </div>

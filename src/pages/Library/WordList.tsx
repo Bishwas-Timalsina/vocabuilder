@@ -64,7 +64,7 @@ const WordList = ({ activeGroup }: { activeGroup: any }) => {
             ))}
           </div>
 
-          {/* Pagination Controls */}
+          
           <div className="flex justify-center items-center mt-6 gap-4">
             <button
               className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 disabled:opacity-50"

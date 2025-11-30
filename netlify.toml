@@ -1,0 +1,14 @@
+# netlify.toml
+[build]
+  # Use npm ci to install exactly what's in package-lock.json
+  command = "npm ci && npm run build"
+  # Replace 'build' with your output folder if different (Next.js: .next, React: build)
+  publish = "build"
+
+[build.environment]
+  # Specify Node.js version (adjust to your project)
+  NODE_VERSION = "20"
+
+# Optional: Plugins to clear cache on every deploy
+[[plugins]]
+  package = "@netlify/plugin-clear-cache"

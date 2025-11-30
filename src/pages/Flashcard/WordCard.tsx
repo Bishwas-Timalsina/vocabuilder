@@ -15,7 +15,7 @@ const WordCard: React.FC<WordCardProps> = ({
   const [flipped, setFlipped] = useState<{ [word: string]: boolean }>({});
   const [currentPage, setCurrentPage] = useState(1);
 
-  const itemsPerPage = 4; // Number of flashcards per page
+  const itemsPerPage = 4;
   const totalPages = wordsData ? Math.ceil(wordsData.length / itemsPerPage) : 1;
 
   const toggleFlip = (word: string) => {
@@ -47,7 +47,6 @@ const WordCard: React.FC<WordCardProps> = ({
 
       {!loading && !error && currentWords.length > 0 && (
         <>
-          {/* Flashcards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
             {currentWords.map((item) => (
               <div
@@ -59,7 +58,6 @@ const WordCard: React.FC<WordCardProps> = ({
                     flipped[item.word] ? "rotate-y-180" : ""
                   }`}
                 >
-                  {/* Front */}
                   <div className="absolute w-full h-full rounded-lg bg-black border border-gray-900 shadow-lg p-4 backface-hidden flex flex-col justify-center items-center">
                     <p className="font-bold text-white text-xl sm:text-2xl lg:text-3xl xl:text-4xl capitalize underline text-center">
                       {item.word}
@@ -72,7 +70,6 @@ const WordCard: React.FC<WordCardProps> = ({
                     </button>
                   </div>
 
-                  {/* Back */}
                   <div className="absolute w-full h-full rounded-lg bg-gray-900 border border-gray-900 shadow-lg p-4 backface-hidden rotate-y-180 overflow-y-auto flex flex-col custom-scrollbar">
                     {item.entries.map((entry, idx) => (
                       <div key={idx} className="mb-3 last:mb-0">
@@ -104,7 +101,6 @@ const WordCard: React.FC<WordCardProps> = ({
             ))}
           </div>
 
-          {/* Pagination Controls */}
           <div className="flex justify-center items-center mt-6 gap-4">
             <button
               className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 disabled:opacity-50"
@@ -135,7 +131,6 @@ const WordCard: React.FC<WordCardProps> = ({
         </div>
       )}
 
-      {/* Tailwind Custom Classes */}
       <style>
         {`
           .perspective {

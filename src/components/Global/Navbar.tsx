@@ -12,7 +12,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-[black] text-white">
+    <nav className="bg-[black] text-white border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link
@@ -74,7 +74,7 @@ export default function Navbar() {
           <MobileNavButton
             route={FLASHCARD}
             icon={<LayoutDashboard size={20} />}
-            label="Today's Pick"
+            label="Flashcard"
           />
           <MobileNavButton
             route={ABOUT}

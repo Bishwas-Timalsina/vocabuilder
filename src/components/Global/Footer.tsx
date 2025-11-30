@@ -7,13 +7,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-[#131212] text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1">
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <Link
             to={`/${HOME}`}
             className="flex items-center space-x-2 flex-shrink-0 cursor-pointer"
           >
-            <img src={Logo} alt="VocabGuide Logo" className="h-22 w-22" />
+            <img src={Logo} alt="VocabGuide Logo" className="h-16 w-16" />
           </Link>
           <nav className="flex space-x-4 mb-2 sm:mb-0">
             <a

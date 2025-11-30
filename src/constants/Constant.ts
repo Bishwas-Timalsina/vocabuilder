@@ -1,5 +1,5 @@
 export const Words = {
-  "Day 1": [
+  "Group 1": [
     "abound",
     "amorphous",
     "austere",
@@ -36,7 +36,7 @@ export const Words = {
     "churlish",
     "clandestine",
   ],
-  "Day 2": [
+  "Group 2": [
     "complacent",
     "cumbersome",
     "debilitating",
@@ -73,7 +73,7 @@ export const Words = {
     "dispense",
     "eloquent",
   ],
-  "Day 3": [
+  "Group 3": [
     "enthrall",
     "eradicate",
     "fledgling",
@@ -110,7 +110,7 @@ export const Words = {
     "obfuscate",
     "ossify",
   ],
-  "Day 4": [
+  "Group 4": [
     "pastiche",
     "perspicacious",
     "ponderous",
@@ -147,7 +147,7 @@ export const Words = {
     "contrite",
     "convoluted",
   ],
-  "Day 5": [
+  "Group 5": [
     "covet",
     "craven",
     "decorum",
@@ -184,7 +184,7 @@ export const Words = {
     "renounce",
     "tempestuous",
   ],
-  "Day 6": [
+  "Group 6": [
     "tenable",
     "transgression",
     "urbane",
@@ -221,7 +221,7 @@ export const Words = {
     "vivacious",
     "abstruse",
   ],
-  "Day 7": [
+  "Group 7": [
     "auxiliary",
     "caricature",
     "depravity",
@@ -258,7 +258,7 @@ export const Words = {
     "arcane",
     "arduous",
   ],
-  "Day 8": [
+  "Group 8": [
     "artless",
     "ascetic",
     "assuage",
@@ -295,7 +295,7 @@ export const Words = {
     "diffuse",
     "documentary",
   ],
-  "Day 9": [
+  "Group 9": [
     "exhaustive",
     "exhilarating",
     "extraneous",
@@ -332,7 +332,7 @@ export const Words = {
     "languid",
     "lull",
   ],
-  "Day 10": [
+  "Group 10": [
     "mettlesome",
     "mollify",
     "neutralize",
@@ -369,7 +369,7 @@ export const Words = {
     "ingenious",
     "keen",
   ],
-  "Day 11": [
+  "Group 11": [
     "multifaceted",
     "omniscient",
     "remarkable",
@@ -406,7 +406,7 @@ export const Words = {
     "prudent",
     "punctilious",
   ],
-  "Day 12": [
+  "Group 12": [
     "recondite",
     "scrupulous",
     "tranquil",
@@ -443,7 +443,7 @@ export const Words = {
     "wayward",
     "assail",
   ],
-  "Day 13": [
+  "Group 13": [
     "benevolent",
     "berate",
     "buoyant",
@@ -480,7 +480,7 @@ export const Words = {
     "brevity",
     "bromide",
   ],
-  "Day 14": [
+  "Group 14": [
     "circumstantial",
     "cloying",
     "counterfeit",
@@ -517,7 +517,7 @@ export const Words = {
     "fanciful",
     "frivolous",
   ],
-  "Day 15": [
+  "Group 15": [
     "heterogeneous",
     "imperious",
     "impertinent",
@@ -554,7 +554,7 @@ export const Words = {
     "forsake",
     "gratify",
   ],
-  "Day 16": [
+  "Group 16": [
     "heed",
     "judicious",
     "lucid",
@@ -591,7 +591,7 @@ export const Words = {
     "proxy",
     "relent",
   ],
-  "Day 17": [
+  "Group 17": [
     "rhetoric",
     "rigor",
     "sparse",
@@ -628,7 +628,7 @@ export const Words = {
     "retrench",
     "self-indulgent",
   ],
-  "Day 18": [
+  "Group 18": [
     "speculate",
     "staid",
     "suppress",
@@ -665,7 +665,7 @@ export const Words = {
     "venerate",
     "antedate",
   ],
-  "Day 19": [
+  "Group 19": [
     "banish",
     "bridle",
     "comply",
@@ -702,7 +702,7 @@ export const Words = {
     "conducive",
     "corporeal",
   ],
-  "Day 20": [
+  "Group 20": [
     "doctrinaire",
     "eclectic",
     "equanimity",
@@ -739,7 +739,7 @@ export const Words = {
     "disconcerting",
     "extant",
   ],
-  "Day 21": [
+  "Group 21": [
     "facility",
     "fitful",
     "incite",
@@ -776,7 +776,7 @@ export const Words = {
     "loathe",
     "malign",
   ],
-  "Day 22": [
+  "Group 22": [
     "malleable",
     "neophyte",
     "plastic",
@@ -813,7 +813,7 @@ export const Words = {
     "miserly",
     "patent",
   ],
-  "Day 23": [
+  "Group 23": [
     "petulant",
     "pithy",
     "pliant",
@@ -850,7 +850,7 @@ export const Words = {
     "tangible",
     "turpitude",
   ],
-  "Day 24": [
+  "Group 24": [
     "unalloyed",
     "undercut",
     "wheedle",
@@ -887,7 +887,7 @@ export const Words = {
     "willful",
     "accentuate",
   ],
-  "Day 25": [
+  "Group 25": [
     "conjectural",
     "convivial",
     "decadent",
@@ -924,7 +924,7 @@ export const Words = {
     "attenuate",
     "augment",
   ],
-  "Day 26": [
+  "Group 26": [
     "aversion",
     "blithe",
     "contempt",
@@ -961,7 +961,7 @@ export const Words = {
     "disperse",
     "distend",
   ],
-  "Day 27": [
+  "Group 27": [
     "endemic",
     "enmity",
     "gauche",
@@ -998,7 +998,7 @@ export const Words = {
     "fecund",
     "feeble",
   ],
-  "Day 28": [
+  "Group 28": [
     "felicitous",
     "forbear",
     "haphazard",
@@ -1035,7 +1035,7 @@ export const Words = {
     "jettison",
     "mendacity",
   ],
-  "Day 29": [
+  "Group 29": [
     "munificent",
     "naive",
     "noble",
@@ -1072,7 +1072,7 @@ export const Words = {
     "languish",
     "nadir",
   ],
-  "Day 30": [
+  "Group 30": [
     "nimble",
     "ominous",
     "outlandish",
@@ -1109,7 +1109,7 @@ export const Words = {
     "stoic",
     "supersede",
   ],
-  "Day 31": [
+  "Group 31": [
     "tout",
     "wane",
     "abreast",
@@ -1146,7 +1146,7 @@ export const Words = {
     "abide",
     "bravado",
   ],
-  "Day 32": [
+  "Group 32": [
     "callow",
     "capitulate",
     "cogitate",

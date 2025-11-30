@@ -9,9 +9,9 @@ import type {
   APIEntry,
 } from "../interface/Interface";
 
-type DayKey = keyof typeof Words;
+type GroupKey = keyof typeof Words;
 
-const useFetchContent = (activeDay: DayKey) => {
+const useFetchContent = (activeGroup: GroupKey) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [wordsData, setWordsData] = useState<WordEntryType[]>([]);
@@ -22,10 +22,10 @@ const useFetchContent = (activeDay: DayKey) => {
       setError(null);
 
       try {
-        const dayWords: any = Words[activeDay];
+        const GroupWords: any = Words[activeGroup];
 
         const fetchedData: WordEntryType[] = await Promise.all(
-          dayWords.map(async (word: string) => {
+          GroupWords.map(async (word: string) => {
             const response = await axios.get<APIResponse>(
               `https://freedictionaryapi.com/api/v1/entries/en/${word}`
             );
@@ -52,7 +52,7 @@ const useFetchContent = (activeDay: DayKey) => {
     };
 
     fetchData();
-  }, [activeDay]);
+  }, [activeGroup]);
 
   return { wordsData, loading, error };
 };

@@ -3,7 +3,7 @@ import Sidebar from "../Library/Sidebar";
 import WordCard from "./WordCard";
 
 const Flashcard = () => {
-  const [activeDay, setActiveDay] = useState<any>("Day 1");
+  const [activeGroup, setActiveGroup] = useState<any>("Group 1");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const mainContentRef = useRef<HTMLDivElement>(null);
@@ -14,8 +14,8 @@ const Flashcard = () => {
     }
   }, []);
 
-  const handleDaySelect = (day: any) => {
-    setActiveDay(day);
+  const handleGroupSelect = (Group: any) => {
+    setActiveGroup(Group);
     scrollToTop();
   };
 
@@ -26,13 +26,13 @@ const Flashcard = () => {
           className="fixed top-15 left-0 z-50 p-3 bg-[#1a1919] text-white rounded-r-3xl shadow-lg lg:hidden w-[80px] flex justify-center items-center gap-1 text-sm"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
-          <p className="">Days</p>
+          <p className="">Groups</p>
         </button>
       )}
 
       <Sidebar
-        activeDay={activeDay}
-        handleDaySelect={handleDaySelect}
+        activeGroup={activeGroup}
+        handleGroupSelect={handleGroupSelect}
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
       />
@@ -41,8 +41,8 @@ const Flashcard = () => {
         ref={mainContentRef}
         className="flex-1 overflow-y-auto w-full h-screen lg:h-auto"
       >
-        {/* <WordList activeDay={activeDay} /> */}
-        <WordCard activeDay={activeDay} />
+        {/* <WordList activeGroup={activeGroup} /> */}
+        <WordCard activeGroup={activeGroup} />
       </div>
     </div>
   );

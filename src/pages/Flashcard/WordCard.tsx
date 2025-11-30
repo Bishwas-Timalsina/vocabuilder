@@ -3,22 +3,34 @@ import useFetchContent from "../../hooks/useFetchContent";
 import { SquareLoader } from "react-spinners";
 
 interface WordCardProps {
-  activeDay: string;
+  activeGroup: string;
 }
 
-const WordCard: React.FC<WordCardProps> = (props: any) => {
-  const { activeDay } = props;
-  const { wordsData, loading, error } = useFetchContent(activeDay);
+const WordCard: React.FC<WordCardProps> = ({
+  activeGroup,
+}: {
+  activeGroup: any;
+}) => {
+  const { wordsData, loading, error } = useFetchContent(activeGroup);
   const [flipped, setFlipped] = useState<{ [word: string]: boolean }>({});
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const itemsPerPage = 4; // Number of flashcards per page
+  const totalPages = wordsData ? Math.ceil(wordsData.length / itemsPerPage) : 1;
 
   const toggleFlip = (word: string) => {
     setFlipped((prev) => ({ ...prev, [word]: !prev[word] }));
   };
 
+  if (!wordsData) return null;
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentWords = wordsData.slice(startIndex, startIndex + itemsPerPage);
+
   return (
     <div className="main-content flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto w-full min-h-screen bg-gray-800">
       <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white mb-6 lg:mb-8 text-center lg:text-left">
-        {activeDay} Flashcard
+        {activeGroup} Flashcard
       </h1>
 
       {loading && (
@@ -33,69 +45,92 @@ const WordCard: React.FC<WordCardProps> = (props: any) => {
         </div>
       )}
 
-      {!loading && !error && (
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
-          {wordsData?.map((item) => (
-            <div
-              key={item.word}
-              className="w-full h-64 sm:h-72 lg:h-80 perspective"
-            >
+      {!loading && !error && currentWords.length > 0 && (
+        <>
+          {/* Flashcards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+            {currentWords.map((item) => (
               <div
-                className={`relative w-full h-full transition-transform duration-500 transform ${
-                  flipped[item.word] ? "rotate-y-180" : ""
-                }`}
+                key={item.word}
+                className="w-full h-64 sm:h-72 lg:h-80 perspective"
               >
-                {/* Front */}
-                <div className="absolute w-full h-full rounded-lg bg-black border border-gray-900 shadow-lg p-4 backface-hidden flex flex-col justify-center items-center">
-                  <p className="font-bold text-white text-xl sm:text-2xl lg:text-3xl xl:text-4xl capitalize underline text-center">
-                    {item.word}
-                  </p>
-                  <button
-                    className="mt-4 px-4 py-2 bg-[#424242] text-white rounded hover:bg-gray-600 transition"
-                    onClick={() => toggleFlip(item.word)}
-                  >
-                    Show Meaning
-                  </button>
-                </div>
+                <div
+                  className={`relative w-full h-full transition-transform duration-500 transform ${
+                    flipped[item.word] ? "rotate-y-180" : ""
+                  }`}
+                >
+                  {/* Front */}
+                  <div className="absolute w-full h-full rounded-lg bg-black border border-gray-900 shadow-lg p-4 backface-hidden flex flex-col justify-center items-center">
+                    <p className="font-bold text-white text-xl sm:text-2xl lg:text-3xl xl:text-4xl capitalize underline text-center">
+                      {item.word}
+                    </p>
+                    <button
+                      className="mt-4 px-4 py-2 bg-[#424242] text-white rounded hover:bg-gray-600 transition"
+                      onClick={() => toggleFlip(item.word)}
+                    >
+                      Show Meaning
+                    </button>
+                  </div>
 
-                {/* Back */}
-                <div className="absolute w-full h-full rounded-lg bg-gray-900 border border-gray-900 shadow-lg p-4 backface-hidden rotate-y-180 overflow-y-auto flex flex-col custom-scrollbar">
-                  {item.entries.map((entry, idx) => (
-                    <div key={idx} className="mb-3 last:mb-0">
-                      <p className="font-light text-xs text-white sm:text-sm lg:text-[14px] xl:text-[16px] italic underline mb-2">
-                        {entry.partOfSpeech}
-                      </p>
-                      <ul className="list-disc list-inside ml-3 space-y-1">
-                        {entry.senses.slice(0, 3).map((sense, i) => (
-                          <li
-                            key={i}
-                            className="text-gray-300 text-xs sm:text-sm lg:text-[14px] xl:text-[15px] leading-relaxed"
-                          >
-                            {sense.definition}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+                  {/* Back */}
+                  <div className="absolute w-full h-full rounded-lg bg-gray-900 border border-gray-900 shadow-lg p-4 backface-hidden rotate-y-180 overflow-y-auto flex flex-col custom-scrollbar">
+                    {item.entries.map((entry, idx) => (
+                      <div key={idx} className="mb-3 last:mb-0">
+                        <p className="font-light text-xs text-white sm:text-sm lg:text-[14px] xl:text-[16px] italic underline mb-2">
+                          {entry.partOfSpeech}
+                        </p>
+                        <ul className="list-disc list-inside ml-3 space-y-1">
+                          {entry.senses.slice(0, 3).map((sense, i) => (
+                            <li
+                              key={i}
+                              className="text-gray-300 text-xs sm:text-sm lg:text-[14px] xl:text-[15px] leading-relaxed"
+                            >
+                              {sense.definition}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
 
-                  {/* Centered Back Button */}
-                  <button
-                    className="mt-4 px-6 py-2 bg-[#424242] text-white rounded hover:bg-gray-600 transition mx-auto"
-                    onClick={() => toggleFlip(item.word)}
-                  >
-                    Back
-                  </button>
+                    <button
+                      className="mt-4 px-6 py-2 bg-[#424242] text-white rounded hover:bg-gray-600 transition mx-auto"
+                      onClick={() => toggleFlip(item.word)}
+                    >
+                      Back
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+
+          {/* Pagination Controls */}
+          <div className="flex justify-center items-center mt-6 gap-4">
+            <button
+              className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 disabled:opacity-50"
+              onClick={() => setCurrentPage((p) => p - 1)}
+              disabled={currentPage === 1}
+            >
+              Prev
+            </button>
+            <span className="text-white">
+              Page {currentPage} of {totalPages}
+            </span>
+            <button
+              className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 disabled:opacity-50"
+              onClick={() => setCurrentPage((p) => p + 1)}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </div>
+        </>
       )}
 
       {!loading && !error && wordsData.length === 0 && (
         <div className="text-center py-12">
           <p className="text-gray-400 text-lg">
-            No words found for {activeDay}
+            No words found for {activeGroup}
           </p>
         </div>
       )}
